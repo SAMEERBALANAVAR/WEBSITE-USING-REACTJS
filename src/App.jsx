@@ -1,5 +1,6 @@
 import React from "react";
-import { Route, Switch } from "react-router-dom";
+import { Redirect, Route, Switch } from "react-router-dom";
+import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import Home from "./Home";
 import About from "./About";
 import Contact from "./Contact";
@@ -9,10 +10,11 @@ function App() {
   return (
     <div>
       <Switch>
-        <Route path="/" component={Home} />
-        <Route path="/about" component={About} />
-        <Route path="/services" component={Services} />
-        <Route path="/contact" component={Contact} />
+        <Route exact path="/" component={Home} />
+        <Route exact path="/about" component={About} />
+        <Route exact path="/services" component={Services} />
+        <Route exact path="/contact" component={Contact} />
+        <Redirect to="/" />
       </Switch>
     </div>
   );
